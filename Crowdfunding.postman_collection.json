@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "71b44144-c271-4cbf-958f-4edb94c8a2ba",
+		"name": "Crowdfunding",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21446954"
+	},
+	"item": [
+		{
+			"name": "API options",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "{{host}}",
+					"host": [
+						"{{host}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all campaigns",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/campaigns",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"campaigns"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new donation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"campaign_id\": \"f6d34334-5b0c-11ee-823f-0242ac110002\", \r\n\"amount\": 5000, \r\n\"donator_nickname\": \"kartoshka\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/donations",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"donations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark donator as fraud",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nickname\": \"kartoshka\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/donations/fraud/mark",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"donations",
+						"fraud",
+						"mark"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
